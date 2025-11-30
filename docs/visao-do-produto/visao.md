@@ -48,9 +48,7 @@ Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sis
 - O sistema só poderá ser acessado com conexão à internet  
 - O banco de dados do sistema usará SQLite
 - O sistema será desenvolvido em Python, com o framework Streamlit
-- 
-
-[Visão do Produto](visao-de-produto.md)
+- A arquitetura do sistema será no modelo MVT (Model, View, Template)
 
 ---
 
@@ -59,7 +57,7 @@ Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sis
 **Os principais casos de uso identificados são:**
 
 - Cadastrar livro
-- Cadastrar usuário
+- CRUD de usuário
 - Realizar empréstimo (Bibliotecário)
 - Registrar devolução
 - Renovar empréstimo (Bibliotecário)
@@ -76,16 +74,14 @@ Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sis
 
 ## 🧠 Diagrama de Classes de Análise
 
-**As descrições das classes estão no arquivo modelo-conceitual.md**
+**Diagrama de classes de modelo/persistência**
 
-[Modelo Conceitual](modelo-conceitual.md)
-
-![Diagrama de Classes](imagens/modelo-conceitual.png)
+![Diagrama de Classes](../diagrama-de-classes/classes.png)
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-- Diagramas elaborados com Astah e draw.io
+- Diagramas elaborados com planttext.com e draw.io
 - Documentação em Markdown
 - Repositório hospedado no GitHub
 
@@ -97,7 +93,6 @@ Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sis
 | Vinícius Cavalcanti de Moura    | 20241011110017 |
 |---------------------------------|----------------|
 | Thiago Tenório de Souza         | 20241011110006 |
-|---------------------------------|----------------|
 |---------------------------------|----------------|
 | João Augusto Cruz de Medeiros   | 20241011110020 |
 |---------------------------------|----------------|
