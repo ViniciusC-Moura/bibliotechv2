@@ -11,13 +11,17 @@ Documentação do projeto desenvolvido como atividade interdisciplinar – IFRN 
 
 ## 2. Descrição do problema
 
-Problema: Método manual de gerenciamento de biblioteca é lento e obsoleto
-Afeta: Professores, alunos e bibliotecários
-Impacto: Lentidão e sobrecarga de logística
-Solução: Implementar um sistema digital rápido e eficiente para o gerenciamento da biblioteca
+**Problema**: Método manual de gerenciamento de biblioteca é lento e obsoleto
+**Afeta**: Professores, alunos e bibliotecários
+**Impacto**: Lentidão e sobrecarga de logística
+**Solução**: Implementar um sistema digital rápido e eficiente para o gerenciamento da biblioteca
 
-Em geral:
-Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sistema que gerencie todo o fluxo de livros da biblioteca, facilitando:
+**Método atual**
+- Totalmente manual, usa-se documentos de responsabilidade e pastas físicas para armazená-lo.
+- Com o sistem pronto, o tempo de tarefa será otimizado, tendo em vista que o aluno ou professor terá acesso a um catálogo digital, fará seu cadastro digitalmente e o registro será enviado diretamente para a área do bibliotecário, o qual homologará o empréstimo do livro.
+
+**Em geral**:
+O projeto visa substituir o método manual e obsoleto de gerenciamento de biblioteca por um sistema que gerencie todo o fluxo de livros da biblioteca, facilitando:
 - A verificação de livros disponíveis
 - O controle de empréstimos realizados e seus respectivos responsáveis
 - A identificação de devoluções atrasadas
@@ -25,6 +29,8 @@ Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sis
 ---
 
 ## 3. Descrição dos usuários
+
+Os principais **stakeholders** do projeto são os membros das instituições que fazem uso da biblioteca e desejam otimizar o processo de empréstimo de livros. 
 
 **Público-Alvo**
 - Professores  
