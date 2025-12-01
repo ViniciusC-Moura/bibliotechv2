@@ -20,7 +20,7 @@
 
 - CDU009 - Verificar disponibilidade dos livros
 
-![Diagrama de Casos de Uso](imagens/diagrama-casos-uso.png)
+![Diagrama de Casos de Uso](diagrama_cdu.png)
 
 # Exemplos de fluxo de casos de uso:
 
