@@ -1,4 +1,4 @@
-# 📘Bibliotech
+# 📘 Bibliotech
 
 ---
 ## Integrantes do grupo:
@@ -18,7 +18,7 @@ Substituir o método manual e obsoleto de gerenciamento de biblioteca por um sis
 O repositório é divido em parte de documentos na pasta docs e parte  de documentos na pasta src.
 
 ---
-## Tecnologias utilizadas: 
+## 🛠️ Tecnologias utilizadas: 
 - Diagramas elaborados com planttext.com e draw.io
 - Documentação em Markdown
 - Repositório hospedado no GitHub
