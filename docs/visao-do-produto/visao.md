@@ -58,20 +58,25 @@ Os principais **stakeholders** do projeto são os membros das instituições que
 
 ---
 
-| código     | Nome      | Descrição    | Categoria    | Classificação |
-|------------|-----------|--------------|--------------|---------------|
-| NF001      | 20241011110017 |
-|---------------------------------|----------------|
-| NF002      | 20241011110006 |
-|---------------------------------|----------------|
-| NF003      | 20241011110020 |
-|---------------------------------|----------------|
-| NF004      | 20241011110017 |
-|---------------------------------|----------------|
-| NF005      | 20241011110006 |
-|---------------------------------|----------------|
-| NF006      | 20241011110020 |
-|---------------------------------|----------------|
+## Requisitos não-funcionais
+
+|código| Nome                          | Descrição                                      | Categoria    | Classificação |
+|------|-------------------------------|------------------------------------------------|--------------|---------------|
+|NF001 | Controle de acesso do usuário | Somente usuários autenticados da instituição   | Segurança    | Obrigatório   |
+|      |                               | podem fazer acesso ao sistema                  |              |               |
+|------|-------------------------------|------------------------------------------------|--------------|---------------|
+|NF002 | Disponibilidade do sistema    | O sistema deve estar sempre disponível para    |Confiabilidade| Importante    |
+|      |                               | os usuários, exceto em janelas de manutenção   |              |               |
+|------|-------------------------------|------------------------------------------------|--------------|---------------|
+|NF003 | Envio de avisos               | Todo dia anterior à devolução do livro, o      | Facilidades  |Importante     |          
+|      |                               | sistema deve enviar um email para o aluno      | de uso       |               |
+|------|-------------------------------|------------------------------------------------|--------------|---------------|
+|NF004 | Impressão em PDF              | A multa pode ser empressa em pdf               | Facilidades  | Opcional      |
+|      |                               |                                                | de uso       |               |
+|------|-------------------------------|------------------------------------------------|--------------|---------------|
+|NF005 | Registro de ações             |O sistema deve registrar todas as ações cruciais| Segurança    | Obrigatório   |
+|      |                               |do usuário,incluindo login e alterações de dados|              |               |
+|------|-------------------------------|------------------------------------------------|--------------|---------------|
 
 ---
 ## 📚 Casos de Uso
