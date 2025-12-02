@@ -88,7 +88,6 @@ Os principais **stakeholders** do projeto são os membros das instituições que
 |------|-------------------------------|------------------------------------------------|--------------|---------------|
 |RF009 | Consulta de Histórico         | O sistema deve registrar o histórico do usuário| Funcional    | Importante    |
 |      |                               | (empréstimos, devoluções e multas).            |              |               |
-|------|-------------------------------|------------------------------------------------|--------------|---------------|
 
 
 ---
@@ -98,19 +97,14 @@ Os principais **stakeholders** do projeto são os membros das instituições que
 |------|-------------------------------|------------------------------------------------|--------------|---------------|
 |NF001 | Controle de acesso do usuário | Somente usuários autenticados da instituição   | Segurança    | Obrigatório   |
 |      |                               | podem fazer acesso ao sistema                  |              |               |
-|------|-------------------------------|------------------------------------------------|--------------|---------------|
 |NF002 | Disponibilidade do sistema    | O sistema deve estar sempre disponível para    |Confiabilidade| Importante    |
 |      |                               | os usuários, exceto em janelas de manutenção   |              |               |
-|------|-------------------------------|------------------------------------------------|--------------|---------------|
 |NF003 | Envio de avisos               | Todo dia anterior à devolução do livro, o      | Facilidades  |Importante     |          
 |      |                               | sistema deve enviar um email para o aluno      | de uso       |               |
-|------|-------------------------------|------------------------------------------------|--------------|---------------|
 |NF004 | Impressão em PDF              | A multa pode ser impressa em pdf               | Facilidades  | Opcional      |
 |      |                               |                                                | de uso       |               |
-|------|-------------------------------|------------------------------------------------|--------------|---------------|
 |NF005 | Registro de ações             |O sistema deve registrar todas as ações cruciais| Segurança    | Obrigatório   |
 |      |                               |do usuário,incluindo login e alterações de dados|              |               |
-|------|-------------------------------|------------------------------------------------|--------------|---------------|
 
 ---
 ## 📚 Casos de Uso
@@ -154,6 +148,5 @@ Os principais **stakeholders** do projeto são os membros das instituições que
 | Vinícius Cavalcanti de Moura    | 20241011110017 |
 | Thiago Tenório de Souza         | 20241011110006 |
 | João Augusto Cruz de Medeiros   | 20241011110020 |
-|---------------------------------|----------------|
 
 ---
