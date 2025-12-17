@@ -1,4 +1,4 @@
-class Autor:
+class Exemplar:
     def __init__(self, id, disponibilidade, codigo_livro):
         self.set_id(id)
         self.set_disponibilidade(disponibilidade)
@@ -8,7 +8,7 @@ class Autor:
         self.__id = v
     def set_disponibilidade(self, v):
         self.__disponibilidade = v
-    def set_codigo_livro(self, v)
+    def set_codigo_livro(self, v):
         self.__codigo_livro = v
 
     def get_id(self): return self.__id

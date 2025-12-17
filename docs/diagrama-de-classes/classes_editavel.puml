@@ -1,12 +1,12 @@
 @startuml
-left to right direction
 
 package "models" {
-  class Bibliotecario{
+
+  class Bibliotecario {
     - cpf : str
     - senha : str
     + getters/setters()
-    + __str__(): str
+    + __str__() : str
   }
 
   class Usuario {
@@ -14,35 +14,15 @@ package "models" {
     - matricula : str
     - nome : str
     - email : str
-    - fone : str
+    - telefone : str
     - senha : str
     + getters/setters()
     + __str__() : str
   }
-  
-  class Multa{
-    - cpf_usuario : str
-    - valor : float
-    - descricao : str
-    + getters/setters()
-    + __str__() : str
-  }
 
-  class Emprestimo {
+  class Autor {
     - id : int
-    - dt_emprestimo : datetime
-    - cpf_usuario : str
-    - id_exemplar : int
-    - dt_prazo : datetime
-    - dt_devolucao : datetime
-    + getters/setters()
-    + __str__() : str
-  }
-
-  class Exemplar {
-    - id : int
-    - disponibilidade : bool
-    - codigo_livro : int
+    - nome : str
     + getters/setters()
     + __str__() : str
   }
@@ -61,104 +41,137 @@ package "models" {
     + __str__() : str
   }
 
-  class Autor {
+  class Exemplar {
     - id : int
-    - nome : str
+    - disponibilidade : bool
+    - codigo_livro : int
     + getters/setters()
-    + __str__(): str
+    + __str__() : str
+  }
+
+  class Emprestimo {
+    - id : int
+    - dt_emprestimo : datetime
+    - dt_prazo : datetime
+    - dt_devolucao : datetime
+    - cpf_usuario : str
+    - id_exemplar : int
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Multa {
+    - id : int
+    - cpf_usuario : str
+    - valor : float
+    - descricao : str
+    + getters/setters()
+    + __str__() : str
   }
 
   abstract class DAO {
-    - _objetos : list
     + inserir(obj)
     + listar() : list
-    + listar_id(id:int)
+    + listar_id(id)
     + atualizar(obj)
     + excluir(obj)
-    + abrir()*
-    + salvar()*
   }
 
   class BibliotecarioDAO {
-    - _objetos : list<Bibliotecario>
-    + abrir()
-    + salvar()
+    + inserir(b:Bibliotecario)
+    + listar() : list<Bibliotecario>
+    + listar_id(cpf:str) : Bibliotecario
+    + atualizar(b:Bibliotecario)
+    + excluir(b:Bibliotecario)
   }
 
   class UsuarioDAO {
-    - _objetos : list<Usuario>
-    + abrir()
-    + salvar()
-  }
-  
-  class MultaDAO {
-    - _objetos : list<Multa>
-    + abrir()
-    + salvar() 
-  }
-
-  class EmprestimoDAO {
-    - _objetos : list<Emprestimo>
-    + abrir()
-    + salvar()
-  }
-
-  class ExemplarDAO {
-    - _objetos : list<Exemplar>
-    + abrir()
-    + salvar()
-  }
-
-  class LivroDAO {
-    - _objetos : list<Livro>
-    + abrir()
-    + salvar()
-  }
-  
-  class AutoriaDAO {
-    - _objetos : list<Autoria>
-    + abrir()
-    + salvar()
+    + inserir(u:Usuario)
+    + listar() : list<Usuario>
+    + listar_id(cpf:str) : Usuario
+    + atualizar(u:Usuario)
+    + excluir(u:Usuario)
   }
 
   class AutorDAO {
-    - _objetos : list<Autor>
-    + abrir()
-    + salvar()
+    + inserir(a:Autor)
+    + listar() : list<Autor>
+    + listar_id(id:int) : Autor
+    + atualizar(a:Autor)
+    + excluir(a:Autor)
+  }
+
+  class LivroDAO {
+    + inserir(l:Livro)
+    + listar() : list<Livro>
+    + listar_id(codigo:int) : Livro
+    + atualizar(l:Livro)
+    + excluir(l:Livro)
+  }
+
+  class AutoriaDAO {
+    + inserir(a:Autoria)
+    + listar() : list<Autoria>
+    + listar_id(chave:tuple) : Autoria
+    + atualizar(a:Autoria)
+    + excluir(a:Autoria)
+  }
+
+  class ExemplarDAO {
+    + inserir(e:Exemplar)
+    + listar() : list<Exemplar>
+    + listar_id(id:int) : Exemplar
+    + atualizar(e:Exemplar)
+    + excluir(e:Exemplar)
+  }
+
+  class EmprestimoDAO {
+    + inserir(e:Emprestimo)
+    + listar() : list<Emprestimo>
+    + listar_id(id:int) : Emprestimo
+    + atualizar(e:Emprestimo)
+    + excluir(e:Emprestimo)
+  }
+
+  class MultaDAO {
+    + inserir(m:Multa)
+    + listar() : list<Multa>
+    + listar_id(id:int) : Multa
+    + atualizar(m:Multa)
+    + excluir(m:Multa)
   }
 
   BibliotecarioDAO --|> DAO
   UsuarioDAO --|> DAO
-  MultaDAO --|> DAO
-  EmprestimoDAO --|> DAO
-  ExemplarDAO --|> DAO
+  AutorDAO --|> DAO
   LivroDAO --|> DAO
   AutoriaDAO --|> DAO
-  AutorDAO --|> DAO
+  ExemplarDAO --|> DAO
+  EmprestimoDAO --|> DAO
+  MultaDAO --|> DAO
 }
 
-
 '==========================
-' RELAÇÕES
+' RELAÇÕES ENTRE ENTIDADES
 '==========================
 
-BibliotecarioDAO "1" *-- "0..*" Bibliotecario
-UsuarioDAO "1" *-- "0..*" Usuario
-MultaDAO "1" *-- "0..*" Multa
-EmprestimoDAO "1" *-- "0..*" Emprestimo
-ExemplarDAO "1" *-- "0..*" Exemplar
-LivroDAO "1" *-- "0..*" Livro
-AutoriaDAO "1" *-- "0..*" Autoria
-AutorDAO "1" *-- "0..*" Autor
+BibliotecarioDAO "1" -- "0..*" Bibliotecario
+UsuarioDAO "1" -- "0..*" Usuario
+AutorDAO "1" -- "0..*" Autor
+LivroDAO "1" -- "0..*" Livro
+AutoriaDAO "1" -- "0..*" Autoria
+ExemplarDAO "1" -- "0..*" Exemplar
+EmprestimoDAO "1" -- "0..*" Emprestimo
+MultaDAO "1" -- "0..*" Multa
 
-Emprestimo --> Usuario : usa cpf_usuario
-Emprestimo --> Exemplar : usa id_exemplar
+Emprestimo --> Usuario : cpf_usuario
+Emprestimo --> Exemplar : id_exemplar
 
-Exemplar --> Livro : usa codigo_livro
+Exemplar --> Livro : codigo_livro
 
-Autoria --> Livro : usa codigo_livro
-Autoria --> Autor : usa id_autor
+Autoria --> Autor : id_autor
+Autoria --> Livro : codigo_livro
 
-Multa --> Usuario : usa cpf_usuario
+Multa --> Usuario : cpf_usuario
 
 @enduml

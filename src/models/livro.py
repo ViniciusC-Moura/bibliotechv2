@@ -1,4 +1,4 @@
-class Autor:
+class Livro:
     def __init__(self, codigo, nome):
         self.set_codigo(id)
         self.set_nome(nome)
