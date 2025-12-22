@@ -6,7 +6,7 @@
 **Usuário (professor/aluno)**: Ator interessado. Inicia o processo no CDU  "Reservar livro"
 ## Fluxo principal de eventos:
 **1. [IN]** Bibliotecário entra na seção “solicitações”  
-**2. [IN]** Bibliotecário seleciona uma solicitação pendente
+**2. [IN]** Bibliotecário seleciona uma solicitação pendente  
 **3. [OUT]** Sistema mostra se o livro está disponível  
 **4. [IN]** Bibliotecário permite o empréstimo  
 **5. [OUT]** Sistema registra um exemplar como “emprestado” durante o período informado pela solicitação  
