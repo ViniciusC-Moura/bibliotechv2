@@ -11,10 +11,10 @@ Documentação do projeto desenvolvido como atividade interdisciplinar – IFRN 
 
 ## 2. Descrição do problema
 
-**Problema**: Método manual de gerenciamento de biblioteca é lento e obsoleto
-**Afeta**: Professores, alunos e bibliotecários
-**Impacto**: Lentidão e sobrecarga de logística
-**Solução**: Implementar um sistema digital rápido e eficiente para o gerenciamento da biblioteca
+**Problema**: Método manual de gerenciamento de biblioteca é lento e obsoleto  
+**Afeta**: Professores, alunos e bibliotecários  
+**Impacto**: Lentidão e sobrecarga de logística  
+**Solução**: Implementar um sistema digital rápido e eficiente para o gerenciamento da biblioteca  
 
 **Método atual**
 - Totalmente manual, usa-se documentos de responsabilidade e pastas físicas para armazená-lo.
