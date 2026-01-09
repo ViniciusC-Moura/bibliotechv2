@@ -10,10 +10,10 @@ class MultaDAO(DAO):
         cur = conn.cursor()
 
         cur.execute("""
-            INSERT INTO Multa (cpf_usuario, valor, descricao)
+            INSERT INTO Multa (id_emprestimo, valor, descricao)
             VALUES (?, ?, ?)
         """, (
-            m.get_cpf_usuario(),
+            m.get_id_emprestimo(),
             m.get_valor(),
             m.get_descricao()
         ))
@@ -30,7 +30,7 @@ class MultaDAO(DAO):
         cur = conn.cursor()
 
         cur.execute("""
-            SELECT id, cpf_usuario, valor, descricao
+            SELECT id, id_emprestimo, valor, descricao
             FROM Multa
         """)
 
@@ -45,7 +45,7 @@ class MultaDAO(DAO):
         cur = conn.cursor()
 
         cur.execute("""
-            SELECT id, cpf_usuario, valor, descricao
+            SELECT id, id_emprestimo, valor, descricao
             FROM Multa
             WHERE id = ?
         """, (id,))
@@ -62,10 +62,10 @@ class MultaDAO(DAO):
 
         cur.execute("""
             UPDATE Multa
-            SET cpf_usuario = ?, valor = ?, descricao = ?
+            SET id_emprestimo = ?, valor = ?, descricao = ?
             WHERE id = ?
         """, (
-            m.get_cpf_usuario(),
+            m.get_id_emprestimo(),
             m.get_valor(),
             m.get_descricao(),
             m.get_id()

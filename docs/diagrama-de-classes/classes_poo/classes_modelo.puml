@@ -1,0 +1,88 @@
+@startuml
+left to right direction
+
+package "models" {
+
+  class Bibliotecario {
+    - cpf : str
+    - senha : str
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Usuario {
+    - cpf : str
+    - matricula : str
+    - nome : str
+    - email : str
+    - telefone : str
+    - senha : str
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Autor {
+    - id : int
+    - nome : str
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Livro {
+    - codigo : int
+    - nome : str
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Autoria {
+    - id_autor : int
+    - codigo_livro : int
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Exemplar {
+    - id : int
+    - disponibilidade : bool
+    - codigo_livro : int
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Emprestimo {
+    - id : int
+    - dt_emprestimo : datetime
+    - dt_prazo : datetime
+    - dt_devolucao : datetime
+    - cpf_usuario : str
+    - id_exemplar : int
+    + getters/setters()
+    + __str__() : str
+  }
+
+  class Multa {
+    - id : int
+    - id_emprestimo : int
+    - valor : float
+    - descricao : str
+    + getters/setters()
+    + __str__() : str
+  }
+}
+
+'==========================
+' RELAÇÕES ENTRE ENTIDADES
+'==========================
+
+Emprestimo "0..n" --> "1" Usuario : cpf_usuario
+Emprestimo "0..n" --> "1" Exemplar : id_exemplar
+
+Exemplar "0..n" --> "1" Livro : codigo_livro
+
+Autoria "1..n" --> "1" Autor : id_autor
+Autoria "1..n" --> "1" Livro : codigo_livro
+
+Multa "1" --> "1" Emprestimo : id_emprestimo
+
+@enduml

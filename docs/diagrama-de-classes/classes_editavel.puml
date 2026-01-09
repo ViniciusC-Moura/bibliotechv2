@@ -62,7 +62,7 @@ package "models" {
 
   class Multa {
     - id : int
-    - cpf_usuario : str
+    - id_emprestimo : int
     - valor : float
     - descricao : str
     + getters/setters()
@@ -164,14 +164,14 @@ ExemplarDAO "1" -- "0..*" Exemplar
 EmprestimoDAO "1" -- "0..*" Emprestimo
 MultaDAO "1" -- "0..*" Multa
 
-Emprestimo --> Usuario : cpf_usuario
-Emprestimo --> Exemplar : id_exemplar
+Emprestimo "0..n" --> "1" Usuario : cpf_usuario
+Emprestimo "0..n" --> "1" Exemplar : id_exemplar
 
-Exemplar --> Livro : codigo_livro
+Exemplar "0..n" --> "1" Livro : codigo_livro
 
-Autoria --> Autor : id_autor
-Autoria --> Livro : codigo_livro
+Autoria "1..n" --> "1" Autor : id_autor
+Autoria "1..n" --> "1" Livro : codigo_livro
 
-Multa --> Usuario : cpf_usuario
+Multa "1" --> "1" Emprestimo : id_emprestimo
 
 @enduml
