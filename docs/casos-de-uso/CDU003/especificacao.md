@@ -4,6 +4,15 @@
 **Bibliotecário**: Ator primário
 
 **Usuário (professor/aluno)**: Ator interessado. Inicia o processo no CDU  "Reservar livro"
+
+**Pré-condições:**
+- O bibliotecário deve estar autenticado no sistema.
+- Deve existir ao menos uma solicitação de empréstimo registrada.
+
+**Pós-condições:**  
+- A solicitação é processada como aprovada ou negada.
+- Em caso de aprovação, o exemplar tem seu status atualizado para emprestado.
+
 ## Fluxo principal de eventos:
 **1. [IN]** Bibliotecário entra na seção “solicitações”  
 **2. [IN]** Bibliotecário seleciona uma solicitação pendente  
@@ -16,13 +25,3 @@
 
 **4a. [IN]** Bibliotecário não permite o empréstimo  
 **5a. [OUT]** Sistema informa o remetente da solicitação que ela foi negada  
-
----
-
-**Pré-condições:**
-- O bibliotecário deve estar autenticado no sistema.
-- Deve existir ao menos uma solicitação de empréstimo registrada.
-
-**Pós-condições:**  
-- A solicitação é processada como aprovada ou negada.
-- Em caso de aprovação, o exemplar tem seu status atualizado para emprestado.
