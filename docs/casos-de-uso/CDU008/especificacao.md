@@ -1,9 +1,10 @@
 # caso 8 - Emitir multa
 
 ## Atores envolvidos:
-** **
+**Bibliotecário**: Ator primário
 
 **Pré-condições:**
+- O bibliotecário deve estar autenticado no sistema.
 
 **Pós-condições:**  
 
