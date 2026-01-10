@@ -5,6 +5,15 @@
 
 **Usuário (professor/aluno)**: Ator interessado
 
+**Pré-condições:**
+- O bibliotecário deve estar autenticado no sistema.
+- Deve existir ao menos um empréstimo ativo registrado no sistema.
+
+**Pós-condições:**  
+- O empréstimo é encerrado no sistema.
+- O status do exemplar é atualizado para disponível ou reservado, conforme a existência de reservas pendentes.
+- Em caso de atraso, a multa correspondente é registrada para o usuário.
+
 ## Fluxo principal de eventos:
 **1. [IN]** Bibliotecário acessa a seção “Empréstimos ativos”.  
 **2. [IN]** Bibliotecário seleciona o empréstimo correspondente ao exemplar devolvido.  
@@ -27,13 +36,3 @@
 **6a.1 [OUT]** Sistema identifica a existência de reserva ativa para o exemplar.  
 **6a.2 [OUT]** Sistema atualiza o status do exemplar para “reservado”.
 
----
-
-**Pré-condições:**
-- O bibliotecário deve estar autenticado no sistema.
-- Deve existir ao menos um empréstimo ativo registrado no sistema.
-
-**Pós-condições:**  
-- O empréstimo é encerrado no sistema.
-- O status do exemplar é atualizado para disponível ou reservado, conforme a existência de reservas pendentes.
-- Em caso de atraso, a multa correspondente é registrada para o usuário.

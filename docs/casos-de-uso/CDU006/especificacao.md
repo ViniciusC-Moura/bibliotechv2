@@ -3,6 +3,14 @@
 ## Atores envolvidos:
 **Usuário (Aluno/Professor)**: Ator primário
 
+**Pré-condições:**
+- O usuário deve estar autenticado no sistema como Aluno ou Professor.
+
+**Pós-condições:**  
+- Uma solicitação de empréstimo é registrada com status pendente.
+- A solicitação fica disponível para análise no **CDU003 – Realizar Empréstimo.**
+- Em caso de conflito, nenhuma solicitação é registrada.
+
 ## Fluxo principal de eventos:
 **1. [IN]** Usuário acessa a funcionalidade “Consultar livros”.  
 **2. [IN]** Usuário seleciona o livro desejado.  
@@ -23,13 +31,3 @@
 
 **6a.1 [OUT]** Sistema identifica a existência de reserva ativa para o exemplar.  
 **6a.2 [OUT]** Sistema atualiza o status do exemplar para “reservado”.
-
----
-
-**Pré-condições:**
-- O usuário deve estar autenticado no sistema como Aluno ou Professor.
-
-**Pós-condições:**  
-- Uma solicitação de empréstimo é registrada com status pendente.
-- A solicitação fica disponível para análise no **CDU003 – Realizar Empréstimo.**
-- Em caso de conflito, nenhuma solicitação é registrada.
