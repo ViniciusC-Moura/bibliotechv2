@@ -19,5 +19,5 @@
 
 ## Fluxos alternativos:
 ### 3a. Reserva pendente
-**3a.1[OUT]** Sistema constata solicitação de reserva pendente pelo exemplar requerido.
-**3a.2[IN]** Bibliotecário nega a solicitação de renovação do empréstimo
+**3a.1[OUT]** Sistema constata solicitação de reserva pendente pelo exemplar requerido.  
+**3a.2[IN]** Bibliotecário nega a solicitação de renovação do empréstimo.  

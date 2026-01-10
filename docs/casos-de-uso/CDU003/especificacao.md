@@ -14,14 +14,14 @@
 - Em caso de aprovação, o exemplar tem seu status atualizado para emprestado.
 
 ## Fluxo principal de eventos:
-**1. [IN]** Bibliotecário entra na seção “solicitações”  
-**2. [IN]** Bibliotecário seleciona uma solicitação pendente  
-**3. [OUT]** Sistema mostra se o livro está disponível  
-**4. [IN]** Bibliotecário permite o empréstimo  
-**5. [OUT]** Sistema registra um exemplar como “emprestado” durante o período informado pela solicitação  
+**1. [IN]** Bibliotecário entra na seção “solicitações”.  
+**2. [IN]** Bibliotecário seleciona uma solicitação pendente.  
+**3. [OUT]** Sistema mostra se o livro está disponível.  
+**4. [IN]** Bibliotecário permite o empréstimo.  
+**5. [OUT]** Sistema registra um exemplar como “emprestado” durante o período informado pela solicitação.  
 
 ## Fluxo alternativo:
 ### 4a. Bibliotecário nega a solicitação
 
-**4a. [IN]** Bibliotecário não permite o empréstimo  
-**5a. [OUT]** Sistema informa o remetente da solicitação que ela foi negada  
+**4a. [IN]** Bibliotecário não permite o empréstimo.  
+**5a. [OUT]** Sistema informa o remetente da solicitação que ela foi negada.  

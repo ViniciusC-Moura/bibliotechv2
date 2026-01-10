@@ -8,7 +8,7 @@
 
 **Pós-condições:**  
 - Uma solicitação de empréstimo é registrada com status pendente.
-- A solicitação fica disponível para análise no **CDU003 – Realizar Empréstimo.**
+- A solicitação fica disponível para análise no **CDU003 – Realizar Empréstimo.**.
 - Em caso de conflito, nenhuma solicitação é registrada.
 
 ## Fluxo principal de eventos:
@@ -17,7 +17,7 @@
 **3. [OUT]** Sistema exibe os detalhes do livro e a agenda de disponibilidade.  
 **4. [IN]** Usuário informa a data de início e a data de término desejadas para o empréstimo.  
 **5. [OUT]** Sistema verifica conflito de datas com outros empréstimos ou reservas existentes do exemplar.  
-**6. [OUT]** Sistema registra a solicitação de empréstimo com status “pendente”.  
+**6. [OUT]** Sistema registra a solicitação de empréstimo com status “Pendente”.  
 **7. [OUT]** Sistema informa ao usuário que a solicitação foi enviada para análise do bibliotecário.
 
 ## Fluxos alternativos:
@@ -30,4 +30,4 @@
 ### 6a. Exemplar possui reserva pendente
 
 **6a.1 [OUT]** Sistema identifica a existência de reserva ativa para o exemplar.  
-**6a.2 [OUT]** Sistema atualiza o status do exemplar para “reservado”.
+**6a.2 [OUT]** Sistema atualiza o status do exemplar para “Reservado”.

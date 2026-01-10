@@ -23,9 +23,20 @@
 ![Diagrama de Casos de Uso](imagens/diagrama-casos-uso.png)
 
 # Casos de uso detalhados:
+[CDU001 - Cadastrar livro](CDU001/especificacao.md)
+
+[CDU002 - Cadastrar usuário](CDU002/especificacao.md)
 
 [CDU003 - Realizar empréstimo](CDU003/especificacao.md)
 
 [CDU004 - Registrar devolução](CDU004/especificacao.md)
 
+[CDU005 - Renovar empréstimo](CDU005/especificacao.md)
+
 [CDU006 - Reservar livro](CDU006/especificacao.md)
+
+[CDU007 - Consultar histórico de empréstimos](CDU007/especificacao.md)
+
+[CDU008 - Emitir multa](CDU008/especificacao.md)
+
+[CDU009 - Verificar disponibilidade dos livros](CDU009/especificacao.md)
