@@ -17,4 +17,4 @@
 ## Fluxos alternativos:
 ### 3a. Livro não encontrado
 **3a.1[OUT]** O sistema informa que nenhum livro foi encontrado.  
-**3a.2[IN]** O consulente opta por fazer uma nova pesquisa.  
+**3a.2[IN]** O consulente opta por fazer uma nova pesquisa.

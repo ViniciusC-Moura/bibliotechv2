@@ -1,6 +1,6 @@
 class Autoria:
     def __init__(self, id_autor, codigo_livro):
-        self.set_id_autor(id)
+        self.set_id_autor(id_autor)
         self.set_codigo_livro(codigo_livro)
     
     def set_id_autor(self, v):

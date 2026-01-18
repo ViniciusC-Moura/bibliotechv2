@@ -1,0 +1,87 @@
+@startuml
+
+package "templates" {
+
+  class LoginUI {
+    + main()
+  }
+
+  class CatalogoUI {
+    + main()
+  }
+
+  class EmprestimosAtivosUI {
+    + main()
+  }
+
+  class HistoricoEmprestimosUI {
+    + main()
+  }
+
+  class SolicitacoesUI {
+    + main()
+  }
+
+  class ManterUsuarioUI {
+    + main()
+  }
+
+  class ManterBibliotecarioUI {
+    + main()
+  }
+
+  class ManterAutorUI {
+    + main()
+  }
+
+  class ManterAutoriaUI {
+    + main()
+  }
+
+  class ManterLivroUI {
+    + main()
+  }
+
+  class ManterExemplarUI {
+    + main()
+  }
+
+  class ManterEmprestimoUI {
+    + main()
+  }
+
+  class ManterMultaUI {
+    + main()
+  }
+}
+
+class IndexUI {
+  + main()
+  + sidebar()
+  + menu_visitante()
+  + menu_usuario()
+  + menu_bibliotecario()
+  + menu_admin()
+  + sair_do_sistema()
+}
+
+' ==========================
+' RELAÇÕES (Index controla)
+' ==========================
+
+IndexUI --> LoginUI
+IndexUI --> CatalogoUI
+IndexUI --> EmprestimosAtivosUI
+IndexUI --> HistoricoEmprestimosUI
+IndexUI --> SolicitacoesUI
+
+IndexUI --> ManterUsuarioUI
+IndexUI --> ManterBibliotecarioUI
+IndexUI --> ManterAutorUI
+IndexUI --> ManterAutoriaUI
+IndexUI --> ManterLivroUI
+IndexUI --> ManterExemplarUI
+IndexUI --> ManterEmprestimoUI
+IndexUI --> ManterMultaUI
+
+@enduml

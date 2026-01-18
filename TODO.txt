@@ -1,7 +1,4 @@
 - fazer os diagramas de interação de todos os CDU
-- colocar os pré/pós requisitos no início do arquivo
-- fazer diagrama de classe da persistência e colocar na pasta docs/classes_poo
-- fazer as UIs de acordo com a detalhação do CDU
-- criar os arquivos e classes de cada página do sistema
+- atualizar o diagrama de classes geral (apoo)
 
 - OBS: o sistema não tem nenhuma validação

@@ -1,6 +1,6 @@
 class Livro:
     def __init__(self, codigo, nome):
-        self.set_codigo(id)
+        self.set_codigo(codigo)
         self.set_nome(nome)
     
     def set_codigo(self, v):

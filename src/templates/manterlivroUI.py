@@ -39,11 +39,10 @@ class ManterLivroUI:
             st.dataframe(df, use_container_width=True)
 
     def inserir():
-        codigo = st.text_input("Código do livro")
         nome = st.text_input("Nome do livro")
 
         if st.button("Inserir"):
-            View.livro_inserir(codigo, nome)
+            View.livro_inserir(nome)
             st.success("Livro cadastrado com sucesso")
             time.sleep(2)
             st.rerun()

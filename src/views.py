@@ -54,6 +54,12 @@ class View:
                 raise ValueError("Bibliotecário já existe.")
         BibliotecarioDAO.inserir(Bibliotecario(cpf, senha))
 
+    def bibliotecario_atualizar(cpf, senha):
+        BibliotecarioDAO.atualizar(Bibliotecario(cpf, senha))
+
+    def bibliotecario_excluir(cpf):
+        UsuarioDAO.excluir(Usuario(cpf, "", "", "", "", ""))
+
 
 
     def usuario_listar():
@@ -109,8 +115,8 @@ class View:
     def livro_listar_codigo(codigo):
         return LivroDAO.listar_id(codigo)
 
-    def livro_inserir(codigo, nome):
-        LivroDAO.inserir(Livro(codigo, nome))
+    def livro_inserir(nome):
+        LivroDAO.inserir(Livro(0, nome))
 
     def livro_atualizar(codigo, nome):
         LivroDAO.atualizar(Livro(codigo, nome))

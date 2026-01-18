@@ -9,10 +9,11 @@ class AutoriaDAO(DAO):
         conn = cls.conectar()
         cur = conn.cursor()
 
-        cur.execute("""
-            INSERT INTO Autoria (id_autor, codigo_livro)
-            VALUES (?, ?)
-        """, (a.get_id_autor(), a.get_codigo_livro()))
+#        cur.execute("""
+#            INSERT INTO Autoria (id_autor, codigo_livro)
+#            VALUES (?, ?)
+#        """, (a.get_id_autor(), a.get_codigo_livro()))
+        cur.execute("INSERT INTO Autoria (id_autor, codigo_livro) VALUES (?, ?)", (a.get_id_autor(), a.get_codigo_livro(),))
 
         conn.commit()
         conn.close()
