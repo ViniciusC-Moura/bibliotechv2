@@ -5,17 +5,20 @@
 
 **Pré-condições:**
 - O bibliotecário deve estar autenticado no sistema.
-- A pessoa deve ser professor ou aluno da instituição.
+- O visitante deve ser professor ou aluno da instituição.
 
 **Pós-condições:**  
-- A pessoa se torna um usuário.
-- A pessoa passa a conseguir realizar empréstimos de livros.
+- Cadastro do usuário está registrado no sistema.
 
 ## Fluxo principal de eventos:
-**1. [IN]** A pessoa solicita ao bibliotecário no balcão para realizar o cadastro.  
-**2. [IN]** O bibliotecário solicita os dados para a pessoa.  
-**3. [IN]** A pessoa informa ao bibliotecário os dados para serem preenchidos no formulário.  
-**4. [OUT]** O sistema aprova os dados da pessoa.     
+**1. [IN]** O visitante solicita ao bibliotecário presente no balcão para realizar o cadastro.  
+**2. [IN]** O bibliotecário acessa a funcionalidade "Cadastrar usuário".  
+**3. [OUT]** Sistema exibe um formulário de preenchimento dos dados do usuário.   
+**4. [IN]** O visitante informa ao bibliotecário os dados a serem preenchidos no formulário.  
+**5. [OUT]** O sistema faz a verificação dos dados.  
+**6. [OUT]** O sistema registra o usuário.  
+**7. [OUT]** O sistema informa ao bibliotecário que o cadastro foi aprovado.   
+**8. [IN]** O bibliotecário informa ao visitante que o cadastro foi aprovado.  
 
 ## Fluxos alternativos:
 ### 4a. Preenchimento incorreto dos dados
