@@ -1,12 +1,145 @@
 @startuml
 
+
+package "templates" {
+  class LoginUI {
+  + main() 
+  }
+  class CatalogoUI {
+  + main()
+  }
+  class EmprestimosAtivosUI {
+  + main()
+  }
+  class HistoricoEmprestimosUI {
+  + main()
+  }
+  class SolicitacoesUI {
+  + main()
+  }
+  class ManterUsuarioUI {
+  + main()
+  }
+  class ManterBibliotecarioUI {
+  + main()
+  }
+  class ManterAutorUI {
+  + main()
+  }
+  class ManterAutoriaUI {
+  + main()
+  }
+  class ManterLivroUI {
+  + main()
+  }
+  class ManterExemplarUI {
+  + main()
+  }
+  class ManterEmprestimoUI {
+  + main()
+  }
+  class ManterMultaUI {
+  + main()
+  }
+}
+
+class IndexUI {
+  + main()
+  + sidebar()
+  + menu_visitante()
+  + menu_usuario()
+  + menu_bibliotecario()
+  + menu_admin()
+  + sair_do_sistema()
+}
+
+IndexUI --> LoginUI
+IndexUI --> CatalogoUI
+IndexUI --> EmprestimosAtivosUI
+IndexUI --> HistoricoEmprestimosUI
+IndexUI --> SolicitacoesUI
+IndexUI --> ManterUsuarioUI
+IndexUI --> ManterBibliotecarioUI
+IndexUI --> ManterAutorUI
+IndexUI --> ManterAutoriaUI
+IndexUI --> ManterLivroUI
+IndexUI --> ManterExemplarUI
+IndexUI --> ManterEmprestimoUI
+IndexUI --> ManterMultaUI
+
+' =========================
+' VIEW
+' =========================
+class View {
+
+  +criar_admin()
+
+  +bibliotecario_autenticar(cpf, senha)
+  +bibliotecario_listar()
+  +bibliotecario_inserir(cpf, senha)
+  +bibliotecario_atualizar(cpf, senha)
+  +bibliotecario_excluir(cpf)
+
+  +usuario_autenticar(cpf, senha)
+  +usuario_listar()
+  +usuario_listar_cpf(cpf)
+  +usuario_inserir(cpf, matricula, nome, email, telefone, senha)
+  +usuario_atualizar(cpf, matricula, nome, email, telefone, senha)
+  +usuario_excluir(cpf)
+
+  +autor_listar()
+  +autor_listar_id(id)
+  +autor_inserir(nome)
+  +autor_atualizar(id, nome)
+  +autor_excluir(id)
+
+  +livro_listar()
+  +livro_listar_codigo(codigo)
+  +livro_inserir(codigo, nome)
+  +livro_atualizar(codigo, nome)
+  +livro_excluir(codigo)
+
+  +autoria_listar()
+  +autoria_inserir(id_autor, codigo_livro)
+  +autoria_excluir(id_autor, codigo_livro)
+
+  +exemplar_listar()
+  +exemplar_listar_id(id)
+  +exemplar_inserir(codigo_livro)
+  +exemplar_atualizar(id, disponibilidade, codigo_livro)
+  +exemplar_excluir(id)
+
+  +emprestimo_listar()
+  +emprestimo_inserir(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar)
+  +emprestimo_devolver(id, dt_devolucao)
+
+  +multa_listar()
+  +multa_inserir(id_emprestimo, valor, descricao)
+  +multa_excluir(id)
+}
+
+LoginUI --> View
+CatalogoUI --> View
+EmprestimosAtivosUI --> View
+HistoricoEmprestimosUI --> View
+SolicitacoesUI --> View
+ManterUsuarioUI --> View
+ManterBibliotecarioUI --> View
+ManterAutorUI --> View
+ManterAutoriaUI --> View
+ManterLivroUI --> View
+ManterExemplarUI --> View
+ManterEmprestimoUI --> View
+ManterMultaUI --> View
+
+' =========================
+' MODELS
+' =========================
 package "models" {
 
   class Bibliotecario {
     - cpf : str
     - senha : str
-    + getters/setters()
-    + __str__() : str
   }
 
   class Usuario {
@@ -16,37 +149,27 @@ package "models" {
     - email : str
     - telefone : str
     - senha : str
-    + getters/setters()
-    + __str__() : str
   }
 
   class Autor {
     - id : int
     - nome : str
-    + getters/setters()
-    + __str__() : str
   }
 
   class Livro {
     - codigo : int
     - nome : str
-    + getters/setters()
-    + __str__() : str
   }
 
   class Autoria {
     - id_autor : int
     - codigo_livro : int
-    + getters/setters()
-    + __str__() : str
   }
 
   class Exemplar {
     - id : int
     - disponibilidade : bool
     - codigo_livro : int
-    + getters/setters()
-    + __str__() : str
   }
 
   class Emprestimo {
@@ -56,8 +179,6 @@ package "models" {
     - dt_devolucao : datetime
     - cpf_usuario : str
     - id_exemplar : int
-    + getters/setters()
-    + __str__() : str
   }
 
   class Multa {
@@ -65,9 +186,23 @@ package "models" {
     - id_emprestimo : int
     - valor : float
     - descricao : str
-    + getters/setters()
-    + __str__() : str
   }
+  
+  Usuario "1" <-- "0..*" Emprestimo
+  Exemplar "1" <-- "0..*" Emprestimo
+  Livro "1" <-- "1..*" Exemplar
+  Autor "1" <-- "0..*" Autoria
+  Livro "1" <-- "0..*" Autoria
+  Emprestimo "1" <-- "0..1" Multa
+}
+
+
+
+
+' =========================
+' DAO
+' =========================
+package "DAO" {
 
   abstract class DAO {
     + inserir(obj)
@@ -151,27 +286,14 @@ package "models" {
   MultaDAO --|> DAO
 }
 
-'==========================
-' RELAÇÕES ENTRE ENTIDADES
-'==========================
+View --> BibliotecarioDAO
+View --> UsuarioDAO
+View --> AutorDAO
+View --> LivroDAO
+View --> AutoriaDAO
+View --> ExemplarDAO
+View --> EmprestimoDAO
+View --> MultaDAO
 
-BibliotecarioDAO "1" -- "0..*" Bibliotecario
-UsuarioDAO "1" -- "0..*" Usuario
-AutorDAO "1" -- "0..*" Autor
-LivroDAO "1" -- "0..*" Livro
-AutoriaDAO "1" -- "0..*" Autoria
-ExemplarDAO "1" -- "0..*" Exemplar
-EmprestimoDAO "1" -- "0..*" Emprestimo
-MultaDAO "1" -- "0..*" Multa
-
-Emprestimo "0..n" --> "1" Usuario : cpf_usuario
-Emprestimo "0..n" --> "1" Exemplar : id_exemplar
-
-Exemplar "0..n" --> "1" Livro : codigo_livro
-
-Autoria "1..n" --> "1" Autor : id_autor
-Autoria "1..n" --> "1" Livro : codigo_livro
-
-Multa "1" --> "1" Emprestimo : id_emprestimo
 
 @enduml

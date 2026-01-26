@@ -1,4 +1,4 @@
-# Caso 3 – Realizar Empréstimo
+# Caso 3 – Processar solicitação de empréstimo
 
 ## Atores envolvidos:
 **Bibliotecário**: Ator primário

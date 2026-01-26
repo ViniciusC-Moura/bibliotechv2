@@ -1,4 +1,3 @@
-- fazer os diagramas de interação de todos os CDU
-- atualizar o diagrama de classes geral (apoo)
+- testar todas as funcionalidades do sistema
 
-- OBS: o sistema não tem nenhuma validação
+- OBS: o sistema não tem nenhuma validação por enquanto

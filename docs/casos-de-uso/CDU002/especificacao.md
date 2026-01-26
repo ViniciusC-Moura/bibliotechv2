@@ -1,4 +1,4 @@
-# caso 2 - Cadastrar usuário
+# Caso 2 - Cadastrar usuário
 
 ## Atores envolvidos:
 **Usuário (professor/aluno)**: Ator primário

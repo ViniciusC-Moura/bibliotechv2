@@ -68,7 +68,7 @@ class ManterLivroUI:
         if len(livros) == 0:
             st.write("Nenhum livro cadastrado")
         else:
-            op = st.selectbox("Selecione o livro", livros)
+            op = st.selectbox("Selecione o livro para excluir", livros)
 
             if st.button("Excluir"):
                 View.livro_excluir(op.get_codigo())

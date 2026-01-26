@@ -47,7 +47,7 @@ class ManterAutorUI:
         if len(autores) == 0:
             st.write("Nenhum autor cadastrado")
         else:
-            op = st.selectbox("Autor", autores)
+            op = st.selectbox("Autor a ser excluído", autores)
             if st.button("Excluir"):
                 View.autor_excluir(op.get_id())
                 st.success("Autor excluído com sucesso")

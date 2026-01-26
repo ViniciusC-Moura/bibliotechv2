@@ -51,7 +51,7 @@ class ManterAutoriaUI:
         if len(autorias) == 0:
             st.write("Nenhuma autoria cadastrada")
         else:
-            op = st.selectbox("Selecione a autoria", autorias)
+            op = st.selectbox("Selecione a autoria a ser excluída", autorias)
 
             if st.button("Excluir"):
                 View.autoria_excluir(op.get_id_autor(), op.get_codigo_livro())

@@ -72,7 +72,7 @@ class ManterMultaUI:
         if len(multas) == 0:
             st.write("Nenhuma multa cadastrada")
         else:
-            op = st.selectbox("Selecione a multa", multas)
+            op = st.selectbox("Selecione a multa a ser excluída", multas)
 
             if st.button("Excluir"):
                 View.multa_excluir(op.get_id())

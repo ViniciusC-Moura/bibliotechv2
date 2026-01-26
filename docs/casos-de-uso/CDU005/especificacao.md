@@ -1,4 +1,4 @@
-# Caso 5 - Renovar empréstimo
+# Caso 5 - Processar solicitação de renovação de empréstimo
 
 ## Atores envolvidos:
 **Bibliotecário**: Ator primário

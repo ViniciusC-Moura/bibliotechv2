@@ -1,4 +1,4 @@
-# caso 9 - Verificar disponibilidade dos livros
+# Caso 9 - Verificar disponibilidade dos livros
 
 ## Atores envolvidos:
 **Bibliotecário**: Ator primário

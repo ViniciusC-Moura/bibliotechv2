@@ -63,7 +63,7 @@ class ManterUsuarioUI:
         if len(usuarios) == 0:
             st.write("Nenhum usuário cadastrado")
         else:
-            op = st.selectbox("Usuário", usuarios)
+            op = st.selectbox("Usuário a ser excluido", usuarios)
             if st.button("Excluir"):
                 View.usuario_excluir(op.get_cpf())
                 st.success("Usuário excluído com sucesso")

@@ -12,7 +12,7 @@
 
 ## Fluxo principal de eventos:
 **1. [IN]** Bibliotecário acessa a funcionalidade "Cadastrar livros".  
-**2. [OUT]** Sistema exibe um formulário de preenchimento dos dados do livro (título, quantidade de páginas, descrição, gênero, Autor).  
+**2. [OUT]** Sistema exibe um formulário de preenchimento dos dados do livro (nome, autor).  
 **3. [IN]** Bibliotecário preenche os campos com os dados requeridos pelo sistema no formulário.  
 **4. [OUT]** Sistema consulta o banco de dados para verificação dos dados.  
 **5. [OUT]** Sistema registra o livro no acervo.  

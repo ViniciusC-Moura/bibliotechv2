@@ -53,7 +53,7 @@ class ManterExemplarUI:
         if len(exs) == 0:
             st.write("Nenhum exemplar cadastrado")
         else:
-            op = st.selectbox("Exemplar", exs)
+            op = st.selectbox("Exemplar a ser excluído", exs)
             if st.button("Excluir"):
                 View.exemplar_excluir(op.get_id())
                 st.success("Exemplar excluído")

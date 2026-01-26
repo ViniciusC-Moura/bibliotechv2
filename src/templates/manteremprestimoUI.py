@@ -79,7 +79,7 @@ class ManterEmprestimoUI:
         if len(emprestimos) == 0:
             st.write("Nenhum empréstimo cadastrado")
         else:
-            op = st.selectbox("Selecione o empréstimo", emprestimos)
+            op = st.selectbox("Selecione o empréstimo a ser excluído", emprestimos)
 
             if st.button("Excluir"):
                 View.emprestimo_excluir(op.get_id())

@@ -38,7 +38,7 @@ class ManterBibliotecarioUI:
         if len(biblios) == 0:
             st.write("Nenhum bibliotecário cadastrado")
         else:
-            op = st.selectbox("Bibliotecário", biblios)
+            op = st.selectbox("Bibliotecário a ser excluído", biblios)
             if st.button("Excluir"):
                 View.bibliotecario_excluir.excluir(op)
                 st.success("Bibliotecário excluído")

@@ -20,18 +20,18 @@
 
 - CDU009 - Verificar disponibilidade dos livros (Bibliotecário)
 
-![Diagrama de Casos de Uso](imagens/diagrama-casos-uso.png)
+![Diagrama de Casos de Uso](diagrama_cdu.png)
 
 # Casos de uso detalhados:
 [CDU001 - Cadastrar livro](CDU001/especificacao.md)
 
 [CDU002 - Cadastrar usuário](CDU002/especificacao.md)
 
-[CDU003 - Realizar empréstimo](CDU003/especificacao.md)
+[CDU003 - Processar solicitação de empréstimo](CDU003/especificacao.md)
 
 [CDU004 - Registrar devolução](CDU004/especificacao.md)
 
-[CDU005 - Renovar empréstimo](CDU005/especificacao.md)
+[CDU005 - Processar solicitação de renovação de empréstimo](CDU005/especificacao.md)
 
 [CDU006 - Reservar livro](CDU006/especificacao.md)
 
