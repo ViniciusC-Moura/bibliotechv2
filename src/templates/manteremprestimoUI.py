@@ -30,7 +30,8 @@ class ManterEmprestimoUI:
                     "CPF Usuário": e.get_cpf_usuario(),
                     "ID Exemplar": e.get_id_exemplar(),
                     "Data Empréstimo": e.get_dt_emprestimo(),
-                    "Data Devolução": e.get_dt_devolucao()
+                    "Data Devolução": e.get_dt_devolucao(),
+                    "Confirmado": e.get_confirmado()
                 })
             st.dataframe(pd.DataFrame(dados), use_container_width=True)
 
@@ -39,9 +40,10 @@ class ManterEmprestimoUI:
         id_exemplar = st.text_input("ID do exemplar")
         data_emp = st.text_input("Data do empréstimo")
         data_dev = st.text_input("Data da devolução")
+        confirmado = st.checkbox("Confirmado?")
 
         if st.button("Inserir"):
-            View.emprestimo_inserir(cpf, id_exemplar, data_emp, data_dev)
+            View.emprestimo_inserir(cpf, id_exemplar, data_emp, data_dev, confirmado)
             st.success("Empréstimo cadastrado com sucesso")
             time.sleep(2)
             st.rerun()
@@ -60,14 +62,17 @@ class ManterEmprestimoUI:
             data_dev = st.text_input(
                 "Data da devolução", op.get_dt_devolucao()
             )
+            confirmado = st.checkbox("Confirmado", op.get_confirmado())
 
             if st.button("Atualizar"):
                 View.emprestimo_atualizar(
                     op.get_id(),
+                    data_emp,
+                    op.get_dt_prazo(),
+                    data_dev,
                     op.get_cpf_usuario(),
                     op.get_id_exemplar(),
-                    data_emp,
-                    data_dev
+                    confirmado
                 )
                 st.success("Empréstimo atualizado com sucesso")
                 time.sleep(2)

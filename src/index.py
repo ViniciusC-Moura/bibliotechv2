@@ -15,6 +15,8 @@ from templates.loginUI import LoginUI
 from views import View
 import streamlit as st
 
+from database import Database
+
 class IndexUI:
 
     def menu_visitante():
@@ -31,6 +33,7 @@ class IndexUI:
             "Menu",
             [
                 "Cadastrar livro",
+                "Cadastrar usuário",
                 "Realizar empréstimo",
                 "Registrar devolução",
                 "Renovar empréstimo",
@@ -47,6 +50,8 @@ class IndexUI:
             SolicitacoesUI.main()
         if op == "Consultar histórico":
             HistoricoEmprestimosUI.main()
+        if op == "Cadastrar usuário":
+            ManterUsuarioUI.main()
 
     def menu_admin():
         op = st.sidebar.selectbox(
@@ -91,6 +96,7 @@ class IndexUI:
             IndexUI.sair_do_sistema()
 
     def main():
+        Database.criar_tabelas()
         View.criar_admin()
         IndexUI.sidebar()
 

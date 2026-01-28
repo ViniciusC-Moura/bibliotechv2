@@ -62,16 +62,17 @@ class Database:
                 dt_devolucao TEXT,
                 cpf_usuario TEXT NOT NULL,
                 id_exemplar INTEGER NOT NULL,
+                confirmado INTEGER NOT NULL,
                 FOREIGN KEY (cpf_usuario) REFERENCES Usuario(cpf),
                 FOREIGN KEY (id_exemplar) REFERENCES Exemplar(id)
             );
                              
             CREATE TABLE IF NOT EXISTS Multa (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                cpf_usuario TEXT NOT NULL,
+                id_emprestimo TEXT NOT NULL,
                 valor REAL NOT NULL,
                 descricao TEXT NOT NULL,
-                FOREIGN KEY (cpf_usuario) REFERENCES Usuario(cpf)
+                FOREIGN KEY (id_emprestimo) REFERENCES Emprestimo(id)
             );
         """)
 

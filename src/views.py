@@ -127,6 +127,13 @@ class View:
                 raise PermissionError("Livro possui exemplares.")
         LivroDAO.excluir(Livro(codigo, ""))
 
+    def livro_get_autores(codigo):
+        ids_autores = [a.get_id_autor() for a in View.autoria_listar() if a.get_codigo_livro() == codigo]
+        return [autor.get_nome() for autor in View.autor_listar() if autor.get_id() in ids_autores]
+
+    def livro_get_exemplares(codigo):
+        return [ex for ex in View.exemplar_listar() if ex.get_codigo_livro() == codigo]
+
 
 
     def autoria_listar():
@@ -166,14 +173,17 @@ class View:
     def emprestimo_listar():
         return EmprestimoDAO.listar()
 
-    def emprestimo_inserir(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar):
-        ex = View.exemplar_listar_id(id_exemplar)
-        if not ex or not ex.get_disponibilidade():
-            raise PermissionError("Exemplar indisponível.")
-        e = Emprestimo(0, dt_emprestimo, dt_prazo, None, cpf_usuario, id_exemplar)
+    def emprestimo_inserir(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar, confirmado):
+        e = Emprestimo(0, dt_emprestimo, dt_prazo, None, cpf_usuario, id_exemplar, confirmado)
         EmprestimoDAO.inserir(e)
-        ex.set_disponibilidade(False)
-        ExemplarDAO.atualizar(ex)
+
+    def emprestimo_excluir(id):
+        EmprestimoDAO.excluir(Emprestimo(id, "", "", None, "", 0, False))
+        for m in View.multa_listar():
+            if m.get_id_emprestimo() == id: MultaDAO.excluir(m)
+
+    def emprestimo_atualizar(id, dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar, confirmado):
+        EmprestimoDAO.atualizar(Emprestimo(id, dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar, confirmado))
 
     def emprestimo_devolver(id, dt_devolucao):
         e = EmprestimoDAO.listar_id(id)

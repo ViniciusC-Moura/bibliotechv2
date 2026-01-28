@@ -11,14 +11,15 @@ class EmprestimoDAO(DAO):
 
         cur.execute("""
             INSERT INTO Emprestimo
-            (dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar)
-            VALUES (?, ?, ?, ?, ?)
+            (dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar, confirmado)
+            VALUES (?, ?, ?, ?, ?, ?)
         """, (
             e.get_dt_emprestimo(),
             e.get_dt_prazo(),
             e.get_dt_devolucao(),
             e.get_cpf_usuario(),
-            e.get_id_exemplar()
+            e.get_id_exemplar(),
+            e.get_confirmado()
         ))
 
         e.set_id(cur.lastrowid)
@@ -32,7 +33,7 @@ class EmprestimoDAO(DAO):
         cur = conn.cursor()
 
         cur.execute("""
-            SELECT id, dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar
+            SELECT id, dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar, confirmado
             FROM Emprestimo
         """)
 
@@ -47,7 +48,7 @@ class EmprestimoDAO(DAO):
         cur = conn.cursor()
 
         cur.execute("""
-            SELECT id, dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar
+            SELECT id, dt_emprestimo, dt_prazo, dt_devolucao, cpf_usuario, id_exemplar, confirmado
             FROM Emprestimo
             WHERE id = ?
         """, (id,))
@@ -65,7 +66,7 @@ class EmprestimoDAO(DAO):
         cur.execute("""
             UPDATE Emprestimo
             SET dt_emprestimo = ?, dt_prazo = ?, dt_devolucao = ?,
-                cpf_usuario = ?, id_exemplar = ?
+                cpf_usuario = ?, id_exemplar = ?, confirmado = ?
             WHERE id = ?
         """, (
             e.get_dt_emprestimo(),
@@ -73,7 +74,9 @@ class EmprestimoDAO(DAO):
             e.get_dt_devolucao(),
             e.get_cpf_usuario(),
             e.get_id_exemplar(),
-            e.get_id()
+            e.get_confirmado(),
+            e.get_id(),
+
         ))
 
         conn.commit()

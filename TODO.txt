@@ -1,3 +1,7 @@
+- atualizar Emprestimo nos diagramas
+- mudar o menu do bibliotecário
+- excluir cdu05 (renovar empréstimo)
+
 - testar todas as funcionalidades do sistema
 
 - OBS: o sistema não tem nenhuma validação por enquanto
