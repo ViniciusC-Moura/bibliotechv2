@@ -193,6 +193,17 @@ class View:
         ex.set_disponibilidade(True)
         ExemplarDAO.atualizar(ex)
 
+    def emprestimo_confirmar(id):
+        emp = EmprestimoDAO.listar_id(id)
+
+        emp.set_confirmado(True)
+        EmprestimoDAO.atualizar(emp)
+
+        pendentes = [e for e in EmprestimoDAO.listar() if not e.get_confirmado() and e.get_id_exemplar() == emp.get_id_exemplar()]
+
+        for e in pendentes:
+            if (emp.get_dt_emprestimo() <= e.get_dt_prazo() and e.get_dt_emprestimo() <= emp.get_dt_prazo()):
+                EmprestimoDAO.excluir(e)
 
 
     def multa_listar():

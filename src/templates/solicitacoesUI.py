@@ -1,5 +1,6 @@
 import streamlit as st
 from views import View
+import time
 
 class SolicitacoesUI:
     def main():
@@ -28,12 +29,16 @@ class SolicitacoesUI:
 
                 with col1:
                     if st.button("Confirmar", key=f"conf_{emp.get_id()}"):
-                        View.emprestimo_atualizar(emp.get_id(), emp.get_dt_emprestimo(), emp.get_dt_prazo(), emp.get_cpf_usuario(), emp.get_id_exemplar(), emp.get_confirmado())
+                        View.emprestimo_confirmar(emp.get_id())
                         st.success("Empréstimo confirmado!")
+                        time.sleep(2)
+                        st.rerun()
 
                 with col2:
                     if st.button("Recusar", key=f"rec_{emp.get_id()}"):
                         View.emprestimo_excluir(emp.get_id())
                         st.warning("Solicitação recusada.")
+                        time.sleep(2)
+                        st.rerun()
 
                 st.divider()

@@ -36,7 +36,6 @@ class IndexUI:
                 "Cadastrar usuário",
                 "Realizar empréstimo",
                 "Registrar devolução",
-                "Renovar empréstimo",
                 "Consultar histórico / Emitir multa",
             ]
         )
@@ -46,9 +45,7 @@ class IndexUI:
             SolicitacoesUI.main()
         if op == "Registrar devolução":
             EmprestimosAtivosUI.main()
-        if op == "Renovar empréstimo":
-            SolicitacoesUI.main()
-        if op == "Consultar histórico":
+        if op == "Consultar histórico / Emitir multa":
             HistoricoEmprestimosUI.main()
         if op == "Cadastrar usuário":
             ManterUsuarioUI.main()

@@ -1,6 +1,7 @@
 import streamlit as st
 from views import View
 from datetime import date
+import time
 
 class CatalogoUI:
     def main():
@@ -18,11 +19,14 @@ class CatalogoUI:
                 data_fim = st.date_input(f"Data de fim - {livro.get_nome()}", value=date.today())
 
                 periodos_exemplares = {}  # chave: exemplar_id, valor: lista de tuplas (inicio, fim)
+
                 for e in exemplares:
                     periodos = []
                     for em in View.emprestimo_listar():
                         if em.get_id_exemplar() == e.get_id() and em.get_confirmado() and em.get_dt_devolucao() is None:
-                            periodos.append((em.get_dt_emprestimo(), em.get_dt_prazo()))
+                            inicio = date.fromisoformat(em.get_dt_emprestimo())
+                            fim    = date.fromisoformat(em.get_dt_prazo())
+                            periodos.append((inicio, fim))
                     periodos.sort(key=lambda x: x[0])
                     periodos_exemplares[e.get_id()] = periodos
 
@@ -59,4 +63,6 @@ class CatalogoUI:
                             False
                         )
                         st.success(f"Livro '{livro.get_nome()}' reservado de {data_inicio} até {data_fim}!")
+                        time.sleep(2)
+                        st.rerun()
             st.divider()
