@@ -36,14 +36,14 @@ class ManterAutoriaUI:
         codigo_livro = st.text_input("Código do livro")
 
 
-        if st.button("Inserir"):
+        if st.button("Inserir", key="autoria_inserir"):
             View.autoria_inserir(int(id_autor), int(codigo_livro))
             st.success("Autoria cadastrada com sucesso")
             time.sleep(2)
             st.rerun()
 
     def atualizar():
-        st.info("Atualização não prevista para bibliotecário")
+        st.info("Atualização não prevista para autoria")
 
     def excluir():
         autorias = View.autoria_listar()
@@ -53,7 +53,7 @@ class ManterAutoriaUI:
         else:
             op = st.selectbox("Selecione a autoria a ser excluída", autorias)
 
-            if st.button("Excluir"):
+            if st.button("Excluir", key="autoria_excluir"):
                 View.autoria_excluir(op.get_id_autor(), op.get_codigo_livro())
 
                 st.success("Autoria excluída com sucesso")

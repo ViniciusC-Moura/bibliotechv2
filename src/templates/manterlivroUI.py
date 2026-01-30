@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 from views import View
-
+from templates.manterautoriaUI import ManterAutoriaUI
 
 class ManterLivroUI:
 
@@ -21,6 +21,17 @@ class ManterLivroUI:
             ManterLivroUI.atualizar()
         with tab4:
             ManterLivroUI.excluir()
+
+        st.subheader("Cadastro de Autorias")
+
+        tab1, tab2, tab3, tab4 = st.tabs(
+            ["Listar", "Inserir", "Atualizar", "Excluir"]
+        )
+
+        with tab1: ManterAutoriaUI.listar()
+        with tab2: ManterAutoriaUI.inserir()
+        with tab3: ManterAutoriaUI.atualizar()
+        with tab4: ManterAutoriaUI.excluir()
 
     def listar():
         livros = View.livro_listar()
