@@ -10,6 +10,7 @@ from templates.manterlivroUI import ManterLivroUI
 from templates.mantermultaUI import ManterMultaUI
 from templates.manterusuarioUI import ManterUsuarioUI
 from templates.solicitacoesUI import SolicitacoesUI
+from templates.meusemprestimosUI import MeusEmprestimosUI
 
 from templates.loginUI import LoginUI
 from views import View
@@ -24,8 +25,9 @@ class IndexUI:
         if op == "Entrar no Sistema": LoginUI.main()
 
     def menu_usuario():
-        op = st.sidebar.selectbox("Menu", ["Catálogo de livros"])
+        op = st.sidebar.selectbox("Menu", ["Catálogo de livros", "Meus empréstimos"])
         if op == "Catálogo de livros": CatalogoUI.main()
+        if op == "Meus empréstimos": MeusEmprestimosUI.main()
 
 
     def menu_bibliotecario():
@@ -37,8 +39,8 @@ class IndexUI:
                 "Realizar empréstimo",
                 "Registrar devolução",
                 "Consultar histórico / Emitir multa",
-            ]
-        )
+            ])
+        
         if op == "Cadastrar livro":
             ManterLivroUI.main()
         if op == "Realizar empréstimo":
@@ -62,8 +64,7 @@ class IndexUI:
                 "Cadastro de exemplares",
                 "Cadastro de empréstimos",
                 "Cadastro de multas",
-            ]
-        )
+            ])
 
         if op == "Cadastro de usuários":
             ManterUsuarioUI.main()

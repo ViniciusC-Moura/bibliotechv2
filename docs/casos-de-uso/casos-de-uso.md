@@ -10,7 +10,7 @@
 
 - CDU004 - Registrar devolução (Bibliotecário)
 
-- CDU005 - Renovar empréstimo (Bibliotecário)
+- CDU005 - Consultar próprio histórico (Aluno/Professor)
 
 - CDU006 - Reservar livro (Aluno/Professor)
 
@@ -31,7 +31,7 @@
 
 [CDU004 - Registrar devolução](CDU004/especificacao.md)
 
-[CDU005 - Processar solicitação de renovação de empréstimo](CDU005/especificacao.md)
+[CDU005 - Consultar próprio histórico](CDU005/especificacao.md)
 
 [CDU006 - Reservar livro](CDU006/especificacao.md)
 

@@ -1,9 +1,3 @@
-- atualizar Emprestimo nos diagramas
-- revisar/corrigir diagramas de interação
-- excluir cdu05 (renovar empréstimo)
-- relacionar CRUD de autoria e livro no diagrama de classes
-- fazer página "meus empréstimos" pro usuario
-
 - testar todas as funcionalidades do sistema
 
 - OBS: o sistema não tem nenhuma validação por enquanto

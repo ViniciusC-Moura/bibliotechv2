@@ -53,6 +53,9 @@ package "templates" {
   class ManterMultaUI {
     + main()
   }
+  class MeusEmprestimosUI {
+    + main()
+  }
 }
 
 class IndexUI {
@@ -74,6 +77,7 @@ IndexUI --> CatalogoUI
 IndexUI --> EmprestimosAtivosUI
 IndexUI --> HistoricoEmprestimosUI
 IndexUI --> SolicitacoesUI
+IndexUI --> MeusEmprestimosUI
 
 IndexUI --> ManterUsuarioUI
 IndexUI --> ManterBibliotecarioUI

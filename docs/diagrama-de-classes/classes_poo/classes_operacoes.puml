@@ -4,45 +4,49 @@ class View {
   +criar_admin()
 
   +bibliotecario_autenticar(cpf, senha)
-  +bibliotecario_listar()
+  +bibliotecario_listar() : list<Bibliotecario>
   +bibliotecario_inserir(cpf, senha)
   +bibliotecario_atualizar(cpf, senha)
   +bibliotecario_excluir(cpf)
 
   +usuario_autenticar(cpf, senha)
-  +usuario_listar()
-  +usuario_listar_cpf(cpf)
+  +usuario_listar() : list<Usuario>
+  +usuario_listar_cpf(cpf) : Usuario
   +usuario_inserir(cpf, matricula, nome, email, telefone, senha)
   +usuario_atualizar(cpf, matricula, nome, email, telefone, senha)
   +usuario_excluir(cpf)
 
-  +autor_listar()
-  +autor_listar_id(id)
+  +autor_listar() : list<Autor>
+  +autor_listar_id(id) : Autor
   +autor_inserir(nome)
   +autor_atualizar(id, nome)
   +autor_excluir(id)
 
-  +livro_listar()
-  +livro_listar_codigo(codigo)
+  +livro_listar() : list<Livro>
+  +livro_listar_codigo(codigo) : Livro
   +livro_inserir(codigo, nome)
   +livro_atualizar(codigo, nome)
   +livro_excluir(codigo)
+  +livro_get_autores(codigo) : list<Autor>
+  +livro_get_exemplares(codigo) : list<Exemplar>
 
-  +autoria_listar()
+  +autoria_listar() : list<Autoria>
   +autoria_inserir(id_autor, codigo_livro)
   +autoria_excluir(id_autor, codigo_livro)
 
-  +exemplar_listar()
-  +exemplar_listar_id(id)
+  +exemplar_listar() : list<Exemplar>
+  +exemplar_listar_id(id) : Exemplar
   +exemplar_inserir(codigo_livro)
   +exemplar_atualizar(id, disponibilidade, codigo_livro)
   +exemplar_excluir(id)
 
-  +emprestimo_listar()
-  +emprestimo_inserir(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar)
+  +emprestimo_listar() : list<Emprestimo>
+  +emprestimo_inserir(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar, confirmado)
+  +emprestimo_atualizar(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar, confirmado)
   +emprestimo_devolver(id, dt_devolucao)
+  +emprestimo_confirmar(id)
 
-  +multa_listar()
+  +multa_listar() : list<Multa>
   +multa_inserir(id_emprestimo, valor, descricao)
   +multa_excluir(id)
 }

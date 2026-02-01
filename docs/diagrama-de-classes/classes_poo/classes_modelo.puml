@@ -57,6 +57,7 @@ package "models" {
     - dt_devolucao : datetime
     - cpf_usuario : str
     - id_exemplar : int
+    - confirmado : bool
     + getters/setters()
     + __str__() : str
   }
