@@ -22,9 +22,25 @@ class ManterBibliotecarioUI:
             st.dataframe(pd.DataFrame(dados), use_container_width=True)
 
     def inserir():
-        cpf = st.text_input("CPF")
+        cpf = st.text_input("CPF", placeholder="000.000.000-00")
         senha = st.text_input("Senha")
         if st.button("Inserir"):
+
+            if not cpf or not senha:
+                st.error("CPF e Senha são obrigatórios.")
+                return
+
+            if len(cpf) != 14:
+                st.error("CPF deve ter 14 caractéres")
+                return
+
+            for b in View.bibliotecario_listar():
+                if b.get_cpf() == cpf:
+                    st.error("Esse bibliotecário já está cadastrado")
+                    return
+                
+
+
             View.bibliotecario_inserir(cpf, senha)
             st.success("Bibliotecário cadastrado com sucesso")
             time.sleep(2)
@@ -40,7 +56,7 @@ class ManterBibliotecarioUI:
         else:
             op = st.selectbox("Bibliotecário a ser excluído", biblios)
             if st.button("Excluir"):
-                View.bibliotecario_excluir.excluir(op)
+                View.bibliotecario_excluir(op.get_id())
                 st.success("Bibliotecário excluído")
                 time.sleep(2)
                 st.rerun()

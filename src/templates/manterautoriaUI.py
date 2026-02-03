@@ -32,15 +32,30 @@ class ManterAutoriaUI:
             st.dataframe(pd.DataFrame(dados), use_container_width=True)
 
     def inserir():
-        id_autor = st.text_input("ID do autor")
-        codigo_livro = st.text_input("Código do livro")
+        autores = View.autor_listar()
+        livros = View.livro_listar()
 
+        if not autores or not livros:
+            st.warning("É necessário ter autores e livros cadastrados")
+            return
+
+        autor = st.selectbox("Autor", autores)
+        livro = st.selectbox("Livro", livros)
 
         if st.button("Inserir", key="autoria_inserir"):
-            View.autoria_inserir(int(id_autor), int(codigo_livro))
+            autorias = View.autoria_listar()
+
+            for a in autorias:
+                if a.get_id_autor() == autor.get_id() and a.get_codigo_livro() == livro.get_codigo():
+                    st.warning("Essa autoria já está cadastrada")
+                    return
+
+            View.autoria_inserir(autor.get_id(), livro.get_codigo())
             st.success("Autoria cadastrada com sucesso")
             time.sleep(2)
             st.rerun()
+
+
 
     def atualizar():
         st.info("Atualização não prevista para autoria")

@@ -36,14 +36,14 @@ class ManterEmprestimoUI:
             st.dataframe(pd.DataFrame(dados), use_container_width=True)
 
     def inserir():
-        cpf = st.text_input("CPF do usuário")
+        cpf_usuario = st.text_input("CPF do usuário")
         id_exemplar = st.text_input("ID do exemplar")
-        data_emp = st.text_input("Data do empréstimo")
-        data_dev = st.text_input("Data da devolução")
+        dt_emprestimo = st.text_input("Data do empréstimo")
+        dt_prazo = st.text_input("Prazo de entrega")
         confirmado = st.checkbox("Confirmado?")
 
         if st.button("Inserir"):
-            View.emprestimo_inserir(cpf, id_exemplar, data_emp, data_dev, confirmado)
+            View.emprestimo_inserir(dt_emprestimo, dt_prazo, cpf_usuario, id_exemplar, confirmado)
             st.success("Empréstimo cadastrado com sucesso")
             time.sleep(2)
             st.rerun()

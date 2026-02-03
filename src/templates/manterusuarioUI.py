@@ -36,6 +36,20 @@ class ManterUsuarioUI:
         senha = st.text_input("Senha")
 
         if st.button("Inserir"):
+
+            if not cpf or not nome or not senha:
+                st.error("CPF, Nome e Senha são obrigatórios.")
+                return
+            
+            if len(cpf) != 14:
+                st.error("CPF deve ter 14 caractéres")
+                return
+
+            for u in View.usuario_listar():
+                if u.get_cpf() == cpf:
+                    st.error("Usuário já cadastrado")
+                    return
+
             View.usuario_inserir(cpf, matricula, nome, email, telefone, senha)
             st.success("Usuário cadastrado com sucesso")
             time.sleep(2)
@@ -53,6 +67,12 @@ class ManterUsuarioUI:
             senha = st.text_input("Senha", op.get_senha())
 
             if st.button("Atualizar"):
+
+                if not nome or not senha:
+                    st.error("Nome e Senha são obrigatórios.")
+                    return
+
+                
                 View.usuario_atualizar(op.get_cpf(), op.get_matricula(), nome, email, telefone, senha)
                 st.success("Usuário atualizado com sucesso")
                 time.sleep(2)

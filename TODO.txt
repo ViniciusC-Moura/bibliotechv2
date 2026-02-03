@@ -1,3 +1,1 @@
-- testar todas as funcionalidades do sistema
-
-- OBS: o sistema não tem nenhuma validação por enquanto
+- feito!

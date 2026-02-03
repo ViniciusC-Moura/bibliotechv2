@@ -24,10 +24,12 @@ class ManterAutorUI:
     def inserir():
         nome = st.text_input("Nome do autor")
         if st.button("Inserir"):
-            View.autor_inserir(nome)
-            st.success("Autor cadastrado com sucesso")
-            time.sleep(2)
-            st.rerun()
+            if nome:
+                View.autor_inserir(nome)
+                st.success("Autor cadastrado com sucesso")
+                time.sleep(2)
+                st.rerun()
+            else: st.error("Nome é obrigatório.")
 
     def atualizar():
         autores = View.autor_listar()
@@ -37,10 +39,12 @@ class ManterAutorUI:
             op = st.selectbox("Autor", autores)
             nome = st.text_input("Novo nome", op.get_nome())
             if st.button("Atualizar"):
-                View.autor_atualizar(op.get_id(), nome)
-                st.success("Autor atualizado com sucesso")
-                time.sleep(2)
-                st.rerun()
+                if nome:
+                    View.autor_atualizar(op.get_id(), nome)
+                    st.success("Autor atualizado com sucesso")
+                    time.sleep(2)
+                    st.rerun()
+                else: st.error("Nome é obrigatório")
 
     def excluir():
         autores = View.autor_listar()

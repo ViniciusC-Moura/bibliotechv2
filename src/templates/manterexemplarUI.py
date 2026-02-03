@@ -30,6 +30,17 @@ class ManterExemplarUI:
     def inserir():
         codigo = st.text_input("Código do livro")
         if st.button("Inserir"):
+
+            if not codigo:
+                st.error("Código é obrigatório.")
+                return
+
+            livro = View.livro_listar_codigo(codigo)
+            if not livro:
+                st.error("Livro não encontrado")
+                return
+
+
             View.exemplar_inserir(codigo)
             st.success("Exemplar cadastrado")
             time.sleep(2)

@@ -53,6 +53,11 @@ class ManterLivroUI:
         nome = st.text_input("Nome do livro")
 
         if st.button("Inserir"):
+
+            if not nome:
+                st.error("Nome é obrigatório")
+                return
+
             View.livro_inserir(nome)
             st.success("Livro cadastrado com sucesso")
             time.sleep(2)
