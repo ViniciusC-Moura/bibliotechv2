@@ -1,6 +1,7 @@
 import streamlit as st
 from views import View
 from datetime import date
+import time
 
 class HistoricoEmprestimosUI:
     def main():
@@ -46,7 +47,11 @@ class HistoricoEmprestimosUI:
                     st.write(f"📌 **Status:** {status}")
 
                     if (status in ["Devolvido com atraso", "Atrasado"]) and not multas:
-                        if st.button("Multar - R${valor_multa}", key=f"multa_{emp.get_id()}"):
+                        if st.button(f"Multar - R${valor_multa}", key=f"multa_{emp.get_id()}"):
                             View.multa_inserir(emp.get_id(), valor_multa, f"Atraso: {valor_multa/10} dias")
+                            st.success("Multa atribuída.")
+                            time.sleep(2)
+                            st.rerun()
+
 
                     st.divider()

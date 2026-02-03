@@ -29,7 +29,7 @@ class EmprestimosAtivosUI:
 
                     if st.button("Registrar devolução", key=f"emprestimo_{emp.get_id()}"):
                         View.emprestimo_devolver(emp.get_id(), hoje)
-                        st.sucess("Devolução registrada")
+                        st.success("Devolução registrada")
                         time.sleep(2)
                         st.rerun()
 
